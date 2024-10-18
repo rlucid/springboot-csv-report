@@ -22,9 +22,4 @@ public class CsvController {
     public void downloadCsv(HttpServletResponse response) throws IOException {
         csvService.generateCsvReport(response);
     }
-
-    @GetMapping("/gen/download")
-    public void downloadCsvGen(HttpServletResponse response) throws IOException, IllegalAccessException {
-        csvService.generateCsvReportForListOfData(response);
-    }
 }

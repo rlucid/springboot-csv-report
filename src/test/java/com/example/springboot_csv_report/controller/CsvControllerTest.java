@@ -34,17 +34,4 @@ class CsvControllerTest {
         assertEquals(response.getHeader("Content-Disposition"), "attachment; filename=report.csv");
         System.out.println(response.getContentAsString());
     }
-
-    @Test
-    void downloadCsvGen() throws Exception {
-        // Act
-        MockHttpServletResponse response = mockMvc.perform(get(CSV_REPORT_PATH.concat("/gen/download")))
-                .andExpect(status().isOk())
-                .andReturn().getResponse();
-
-        // Assert
-        assertEquals(response.getContentType(), "text/csv");
-        assertEquals(response.getHeader("Content-Disposition"), "attachment; filename=gen-report.csv");
-        System.out.println(response.getContentAsString());
-    }
 }
